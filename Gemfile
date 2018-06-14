@@ -6,6 +6,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "cucumber"
 gem "selenium-webdriver"
-gem "byebug"
 gem "minitest"
 gem 'chromedriver-helper'

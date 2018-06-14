@@ -1,6 +1,11 @@
 Feature: searching for Paxos via google search
 
-Scenario: Successful Login with Valid Credentials
+Scenario: Search should contain paxos as top result
   Given user of google search
-  When I want to be able to get search results for Paxos Bankchain
-  Then I should get information about paxos bankchain
+  When I search for paxos
+  Then I should see paxos website as top result
+
+Scenario: Search should contain search term in url
+  Given user of google search
+  When I search for paxos
+  Then URL should contain paxos in query string

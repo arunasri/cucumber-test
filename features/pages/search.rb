@@ -1,4 +1,3 @@
-require 'byebug'
 class Site
   URL = "https://www.google.com/"
 
@@ -22,6 +21,9 @@ class Site
 
   def top_result_url
     self.top_result.attribute('href')
+  end
+  def current_url
+    @driver.current_url
   end
   private
 
