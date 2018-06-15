@@ -6,3 +6,15 @@ bundle install
 ```
 bundle exec cucumber features/*.feature
 ```
+
+### running different browsers
+```
+bundle exec cucumber  features/search.feature BROWSER=ff
+bundle exec cucumber  features/search.feature BROWSER=chrome
+```
+
+### running api test
+```
+bundle exec cucumber  features/api.feature
+```
+![results output](img/output.png)

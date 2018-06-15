@@ -1,13 +1,14 @@
 class Site
-  URL = "https://www.google.com/"
-
   def initialize(browser)
     @driver = browser
   end
 
   def open
     @driver.manage.window.maximize
-    @driver.navigate.to URL
+  end
+
+  def visit(url)
+    @driver.navigate.to url
   end
 
   def search(text)
@@ -25,6 +26,9 @@ class Site
   def current_url
     @driver.current_url
   end
+  def close
+    @driver.close
+  end
   private
 
   def search_field
@@ -35,7 +39,4 @@ class Site
     @driver.find_element(name: 'btnK')
   end
 
-  def close
-    @driver.close
-  end
 end # Site
