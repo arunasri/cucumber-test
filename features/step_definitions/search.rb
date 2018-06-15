@@ -1,11 +1,12 @@
-site = Site.new(Selenium::WebDriver.for(:firefox))
+
 Given("user of google search") do
-  site.open
+  site.visit("https://www.google.com/")
 end
 
 Then("I should get information about paxos bankchain") do
   assert(site.top_result_url == 'https://www.paxos.com/')
 end
+
 When("I search for paxos") do
   site.search('paxos')
 end
@@ -16,4 +17,9 @@ end
 
 Then("URL should contain paxos in query string") do
   assert(site.current_url.index(/paxos/) != nil)
+
+end
+
+After do
+  site.close()
 end
