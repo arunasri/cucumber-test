@@ -6,8 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 public class BasePageObject {
 	public final WebDriver driver;
 
-	public boolean queryStringContains(String target) {
-		return this.driver.getCurrentUrl().contains(target);
+	public boolean queryStringContains(String query) {
+		return this.driver.getCurrentUrl().contains(query);
 	}
 
 	public BasePageObject(WebDriver driver) {
